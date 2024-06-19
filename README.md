@@ -30,8 +30,8 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/dhafindzahin/frontendmentor-age-calculator-app](https://github.com/dhafindzahin/frontendmentor-age-calculator-app)
+- Live Site URL: [https://dhafindzahin.github.io/frontendmentor-age-calculator-app/](https://dhafindzahin.github.io/frontendmentor-age-calculator-app/)
 
 ## My process
 
