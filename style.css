@@ -1,5 +1,5 @@
 /*
-  1. Use a more-intuitive box-sizing model.
+	1. Use a more-intuitive box-sizing model.
 */
 *,
 *::before,
@@ -87,34 +87,36 @@ h6 {
 
 .card {
 	background-color: var(--white);
-	padding: 2.5em 1.5em;
+	padding: 4em 1.5em;
 	border-radius: 20px;
 	border-bottom-right-radius: 75px;
+	width: 100%;
+	height: min-content;
 }
 
 .form {
 	display: flex;
 	gap: 28px;
 	border-bottom: solid 2px var(--light-grey);
-	padding-bottom: 3em;
+	padding-bottom: 4.5em;
 }
 
 .inputfield {
 	display: flex;
 	flex-direction: column;
-	width: 12ch;
+	width: 25%;
 }
 
 .inputfield > label {
 	color: var(--smokey-grey);
 	font-weight: bold;
 	letter-spacing: 3px;
-	margin-left: -4px;
+	font-size: 12px;
 }
 
 .inputfield > input {
 	border-radius: 8px;
-	font-size: 32px;
+	font-size: 20px;
 	font-weight: 900;
 	padding: 0.5em;
 	border: solid 2px var(--light-grey);
@@ -126,13 +128,12 @@ h6 {
 }
 
 .button {
-	margin-top: -28px;
+	margin-top: -40px;
 	display: block;
 	border-radius: 100%;
 	border: none;
 	background-color: var(--purple);
-	color: white;
-	font-size: 40px;
+	padding: 24px;
 }
 
 .result-container {
@@ -140,9 +141,10 @@ h6 {
 	font-weight: 800;
 	font-size: 48px;
 	line-height: 50px;
+	margin-top: 30px;
 }
 
-.number	{
+.number {
 	color: var(--purple);
 }
 
