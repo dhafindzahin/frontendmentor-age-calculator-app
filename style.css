@@ -92,6 +92,7 @@ h6 {
 	border-bottom-right-radius: 75px;
 	width: 100%;
 	height: min-content;
+	max-width: 350px;
 }
 
 .form {
@@ -112,6 +113,7 @@ h6 {
 	font-weight: bold;
 	letter-spacing: 3px;
 	font-size: 12px;
+	margin-bottom: 4px;
 }
 
 .inputfield > input {
@@ -149,7 +151,30 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
+	.card {
+		width: 50%;
+		padding-inline: 2.5em;
+		min-width: 720px;
+	}
+
+	.inputfield > input {
+		font-size: 28px;
+		font-weight: 800;
+	}
+
 	.button-container {
 		justify-content: end;
+	}
+
+	.result-container {
+		line-height: 52px;
+		font-size: 48px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.result-container {
+		line-height: 100px;
+		font-size: clamp(72px, 7vw, 88px);
 	}
 }
