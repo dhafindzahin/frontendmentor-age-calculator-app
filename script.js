@@ -17,6 +17,35 @@ yearInput.max = Number(new Date().getFullYear());
 function setLastDay() {
 	dayInput.max = new Date(yearInput.value, monthInput.value, 0).getDate();
 }
+function daysInMonth(year, month) {
+	return new Date(year, month + 1, 0).getDate();
+}
+
+function dateDifference(startDate, endDate) {
+	let start = new Date(startDate);
+	let end = new Date(endDate);
+
+	let years = end.getFullYear() - start.getFullYear();
+	let months = end.getMonth() - start.getMonth();
+	let days = end.getDate() - start.getDate();
+
+	if (days < 0) {
+		months -= 1;
+		const prevMonth = (end.getMonth() - 1 + 12) % 12;
+		const prevMonthYear = end.getMonth() === 0 ? end.getFullYear() - 1 : end.getFullYear();
+		days += daysInMonth(prevMonthYear, prevMonth);
+	}
+	if (months < 0) {
+		years -= 1;
+		months += 12;
+	}
+
+	return {
+		years: years,
+		months: months,
+		days: days,
+	};
+}
 
 yearInput.addEventListener("blur", setLastDay);
 monthInput.addEventListener("blur", setLastDay);
@@ -58,5 +87,16 @@ btnCalculate.addEventListener("click", () => {
 		}
 	} else {
 		dayField.classList.remove("invalid");
+	}
+
+	if (yearInput.checkValidity() && monthInput.checkValidity() && dayInput.checkValidity()) {
+		const startDate = `${yearInput.value}-${monthInput.value}-${dayInput.value}`;
+		const endDate = new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate();
+		console.log(startDate, endDate);
+
+		const diff = dateDifference(startDate, endDate);
+		yearResult.innerText = diff.years;
+		monthResult.innerText = diff.months;
+		dayResult.innerText = diff.days;
 	}
 });
