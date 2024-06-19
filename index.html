@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 
 		<title>Frontend Mentor | Age calculator app</title>
 
@@ -20,24 +21,24 @@
 	<body class="wrapper">
 		<main class="card">
 			<form class="form" novalidate>
-				<div class="inputfield">
+				<div class="inputfield" id="day-field">
 					<label for="day">DAY</label>
-					<input type="text" name="day" id="day" placeholder="DD" />
+					<input type="number" name="day" placeholder="DD" required min="1" />
 					<span></span>
 				</div>
-				<div class="inputfield">
+				<div class="inputfield" id="month-field">
 					<label for="month">MONTH</label>
-					<input type="text" name="month" id="month" placeholder="MM" />
+					<input type="number" name="month" placeholder="MM" required min="1" max="12" />
 					<span></span>
 				</div>
-				<div class="inputfield">
+				<div class="inputfield" id="year-field">
 					<label for="year">YEAR</label>
-					<input type="text" name="year" id="year" placeholder="YYYY" />
+					<input type="number" name="year" placeholder="YYYY" required min="1" />
 					<span></span>
 				</div>
 			</form>
 			<div class="button-container">
-				<button class="button">
+				<button class="button" id="btn-calculate">
 					<svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 384 512">
 						<path
 							d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
@@ -47,9 +48,9 @@
 				</button>
 			</div>
 			<div class="result-container">
-				<p><span class="number">--</span> years</p>
-				<p><span class="number">--</span> months</p>
-				<p><span class="number">--</span> days</p>
+				<p><span class="number" id="year-result">--</span> years</p>
+				<p><span class="number" id="month-result">--</span> months</p>
+				<p><span class="number" id="day-result">--</span> days</p>
 			</div>
 		</main>
 	</body>

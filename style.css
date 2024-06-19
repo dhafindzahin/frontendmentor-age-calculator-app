@@ -125,8 +125,23 @@ h6 {
 	caret-color: var(--purple);
 }
 
-.inputfield > :is(input:focus-visible) {
+.inputfield > input:focus-visible {
 	outline-color: var(--purple);
+}
+
+.inputfield.invalid > :is(label, input, span) {
+	color: var(--light-red);
+	border-color: var(--light-red);
+	display: block;
+}
+
+.inputfield > span {
+	margin-top: 4px;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 700;
+	color: var(--light-red);
+	display: none;
 }
 
 .button-container {
@@ -157,18 +172,25 @@ h6 {
 
 .number {
 	color: var(--purple);
+	letter-spacing: 12px;
 }
 
 @media screen and (min-width: 768px) {
 	.card {
 		width: 50%;
-		padding-inline: 2.5em;
+		padding: 2.5em;
 		min-width: 720px;
+		border-bottom-right-radius: 150px;
 	}
 
 	.inputfield > input {
 		font-size: 28px;
 		font-weight: 800;
+	}
+
+	.inputfield > span {
+		margin-top: 4px;
+		color: var(--light-red);
 	}
 
 	.button-container {
@@ -182,8 +204,12 @@ h6 {
 }
 
 @media screen and (min-width: 1024px) {
+	.wrapper {
+		padding: em;
+	}
+
 	.result-container {
 		line-height: 100px;
-		font-size: clamp(72px, 7vw, 88px);
+		font-size: clamp(72px, 7vw, 80px);
 	}
 }
